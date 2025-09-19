@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestão de Projetos - Telechana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Gestão de Projetos - Telechana</h1>
+  </header>
+
+  <main>
+    <section id="projeto-form">
+      <h2>Novo Projeto</h2>
+      <form id="formProjeto" autocomplete="off">
+        <input type="text" id="nomeProjeto" placeholder="Nome do Projeto" required />
+        <input type="date" id="dataInicio" required />
+        <input type="date" id="dataFim" required />
+        <button type="submit">Criar Projeto</button>
+      </form>
+    </section>
+    
+      <section id="ordem-servico-form">
+      <h2>Nova Ordem de Serviço</h2>
+      <form id="formOrdem" autocomplete="off">
+  <select id="projetoSelect" required></select>
+  <input type="text" id="prestador" placeholder="Nome do Prestador" required />
+  <input type="text" id="gestor" placeholder="Nome do Gestor Responsável" required />
+  <input type="datetime-local" id="dataHora" required />
+  <input type="text" id="atividade" placeholder="Atividade" required />
+  <textarea id="observacao" placeholder="Observações" required></textarea>
+  <input type="time" id="duracao" placeholder="Duração (h)" required></input>
+  <input type="number" id="valor" placeholder="Valor (R$)" required></input>
+  <button type="submit">Adicionar Ordem</button>
+
+</form>
+    <section id="lista-ordens">
+      <h2>Ordens de Serviço</h2>
+      <section id="lista-ordens">
+  <h2>
+    <button onclick="limparOrdens()">🗑️ Limpar Todas</button>
+  </h2>
+      <table id="tabelaOrdens">
+        <thead>
+          <tr>
+            <th>Projeto</th>
+            <th>Prestador</th>
+            <th>Gestor</th>
+            <th>Data/Hora</th>
+            <th>Atividade</th>
+            <th>Observação</th>
+            <th>Duração</th>
+            <th>Valor</th>
+            <th>Status</th>       
+          </tr>
+        </thead>
+        <tbody id="listaOrdens"></tbody>
+      </table>
+    </section>
+
+    <section id="relatorio">
+  <h2>Relatório de Ordens Aprovadas</h2>
+  <button onclick="gerarRelatorio()">Gerar Relatório</button>
+  <div id="resultadoRelatorio"></div>
+  </section>
+  </main>
+
+  <script src="app.js"></script>
+  </body>
+  </html>
